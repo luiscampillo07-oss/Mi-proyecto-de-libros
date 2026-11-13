@@ -1,0 +1,123 @@
+:root {
+    --bg-page: oklch(0.12 0.005 250);
+    --bg-card: oklch(0.18 0.005 250);
+    --border-subtle: oklch(0.28 0.005 250);
+    --text-main: oklch(0.98 0.005 250);
+    --text-muted: oklch(0.80 0.005 250);
+    --brand: oklch(0.55 0.20 250);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    max-width: 393px;
+    margin-inline: auto;
+    min-height: 852px;
+    padding-bottom: 90px;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+
+    button {
+        background: none;
+        border: none;
+        color: var(--text-main);
+        font-size: 1.2rem;
+    }
+}
+
+.app-main {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+article.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    .card-img {
+        width: 90px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .card-title {
+        font-size: 0.95rem;
+        margin: 0;
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+    }
+
+    .card-author {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        margin: 0;
+    }
+
+    .card-price {
+        font-weight: 700;
+        color: var(--brand);
+        margin: 0;
+        font-size: 0.95rem;
+    }
+}
+
+.app-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 393px;
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-subtle);
+    padding: 12px 0;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+    }
+}
