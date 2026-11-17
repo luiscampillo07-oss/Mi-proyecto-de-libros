@@ -5,21 +5,54 @@
     --text-main: oklch(0.98 0.005 250);
     --text-muted: oklch(0.80 0.005 250);
     --brand: oklch(0.55 0.20 250);
+
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+    --text-xs: 0.75rem;
+    /* Caption (12 px) */
+    --text-sm: 0.875rem;
+    /* Body Small (14 px) */
+    --text-base: 1rem;
+    /* Body (16 px) */
+    --text-lg: 1.125rem;
+    /* H3 (18 px) */
+    --text-xl: 1.25rem;
+    /* H2 (20 px) */
+    --text-2xl: 1.5rem;
+    /* H1 (24 px) */
+    --text-3xl: 1.875rem;
+    /* Display (30 px) */
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 body {
     background-color: var(--bg-page);
     color: var(--text-main);
-    font-family: system-ui, sans-serif;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.5;
     margin: 0;
     max-width: 393px;
     margin-inline: auto;
-    min-height: 852px;
+    min-height: 100dvh;
     padding-bottom: 90px;
+}
+
+h1,
+h2,
+h3,
+.logo {
+    font-family: var(--font-display);
+}
+
+p {
+    max-width: 65ch;
 }
 
 .app-header {
@@ -28,11 +61,16 @@ body {
     align-items: center;
     padding: 16px;
 
+    .logo {
+        font-size: var(--text-xl);
+        margin: 0;
+    }
+
     button {
         background: none;
         border: none;
         color: var(--text-main);
-        font-size: 1.2rem;
+        font-size: var(--text-lg);
     }
 }
 
@@ -73,7 +111,7 @@ article.card {
     }
 
     .card-title {
-        font-size: 0.95rem;
+        font-size: var(--text-sm);
         margin: 0;
 
         a {
@@ -84,7 +122,7 @@ article.card {
 
     .card-author {
         color: var(--text-muted);
-        font-size: 0.85rem;
+        font-size: var(--text-xs);
         margin: 0;
     }
 
@@ -92,7 +130,7 @@ article.card {
         font-weight: 700;
         color: var(--brand);
         margin: 0;
-        font-size: 0.95rem;
+        font-size: var(--text-sm);
     }
 }
 
@@ -117,7 +155,12 @@ article.card {
         a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: var(--text-xs);
+
+            &.active {
+                color: var(--brand);
+                font-weight: 700;
+            }
         }
     }
 }
